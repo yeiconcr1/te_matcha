@@ -203,13 +203,16 @@ function App() {
           {/* Left Section: Logo + Social */}
           <div className="footer-left-section">
             <Logo variant="footer" />
-            <div className="social-links-revamped">
-              <a href="https://www.instagram.com/match.te/" target="_blank" rel="noopener noreferrer" className="social-icon-link instagram" aria-label="Instagram">
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
-              <a href="https://www.tiktok.com/@damesisas" target="_blank" rel="noopener noreferrer" className="social-icon-link tiktok" aria-label="TikTok">
-                <FontAwesomeIcon icon={faTiktok} />
-              </a>
+            <div className="social-container">
+              <span className="social-label">Síguenos en:</span>
+              <div className="social-links-revamped">
+                <a href="https://www.instagram.com/match.te/" target="_blank" rel="noopener noreferrer" className="social-icon-link instagram" aria-label="Instagram">
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
+                <a href="https://www.tiktok.com/@damesisas" target="_blank" rel="noopener noreferrer" className="social-icon-link tiktok" aria-label="TikTok">
+                  <FontAwesomeIcon icon={faTiktok} />
+                </a>
+              </div>
             </div>
           </div>
 
