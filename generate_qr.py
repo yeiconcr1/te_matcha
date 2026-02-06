@@ -1,5 +1,5 @@
 import qrcode
-from PIL import Image
+from PIL import Image, ImageDraw
 
 # Data and Paths
 data = "https://te-matcha.vercel.app/"
@@ -10,47 +10,50 @@ brand_color = "#4A6741" # Matcha Green
 # 1. Generate QR Code
 qr = qrcode.QRCode(
     version=1,
-    error_correction=qrcode.constants.ERROR_CORRECT_H,
+    error_correction=qrcode.constants.ERROR_CORRECT_H, # High EC to support covering data
     box_size=12,
-    border=2,
+    border=4,
 )
 qr.add_data(data)
 qr.make(fit=True)
-qr_img = qr.make_image(fill_color=brand_color, back_color="white").convert('RGBA')
+img = qr.make_image(fill_color=brand_color, back_color="white").convert('RGBA')
 
-# 2. Load Logo
+# 2. Load and Prepare Logo
 try:
     logo = Image.open(logo_path)
-    # Resize logo to match QR width (with some padding)
-    target_logo_width = int(qr_img.size[0] * 0.6) # Logo 60% of QR width
+    
+    # Calculate logo size (Max ~30% of QR width to ensure scannability)
+    # The vertical logo was huge (60%), but in the center, we must limit it.
+    target_logo_width = int(img.size[0] * 0.30) 
+    
     ratio = target_logo_width / logo.size[0]
     target_logo_height = int(logo.size[1] * ratio)
     logo = logo.resize((target_logo_width, target_logo_height), Image.Resampling.LANCZOS)
     
-    # 3. Create Composite Image
-    # Height = Logo Height + Padding + QR Height
-    padding = 40
-    total_height = target_logo_height + padding + qr_img.size[1]
-    total_width = max(qr_img.size[0], logo.size[0] + padding) # Ensure enough width
+    # 3. Paste Logo in Center
+    pos_x = (img.size[0] - logo.size[0]) // 2
+    pos_y = (img.size[1] - logo.size[1]) // 2
     
-    # Create white canvas
-    composite = Image.new('RGBA', (total_width, total_height), 'white')
+    # Create a white background for the logo ("sin qr encima")
+    # This prevents QR dots from showing through transparent parts of the logo
+    bg_w, bg_h = logo.size
+    # Add a small padding for the white box
+    padding = 6
+    white_bg = Image.new('RGBA', (bg_w + padding*2, bg_h + padding*2), 'white')
     
-    # Paste Logo (Centered at top)
-    logo_x = (total_width - logo.size[0]) // 2
-    logo_y = 20 # Top padding
-    composite.paste(logo, (logo_x, logo_y), mask=logo if logo.mode == 'RGBA' else None)
+    # Paste white box first (centered)
+    bg_pos_x = pos_x - padding
+    bg_pos_y = pos_y - padding
+    img.paste(white_bg, (bg_pos_x, bg_pos_y))
     
-    # Paste QR (Centered below logo)
-    qr_x = (total_width - qr_img.size[0]) // 2
-    qr_y = logo_y + logo.size[1] + 20 # Padding between logo and QR
-    composite.paste(qr_img, (qr_x, qr_y))
+    # Paste logo on top of white box
+    img.paste(logo, (pos_x, pos_y), mask=logo if logo.mode == 'RGBA' else None)
     
     # Save
-    composite.save(output_path)
-    print(f"QR Code with Logo header generated: {output_path}")
+    img.save(output_path)
+    print(f"Centered Corporate QR Code generated: {output_path}")
     
 except Exception as e:
     print(f"Error adding logo: {e}")
     # Fallback to just QR
-    qr_img.save(output_path)
+    img.save(output_path)
