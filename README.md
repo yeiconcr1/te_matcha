@@ -1,16 +1,68 @@
-# React + Vite
+# 🍃 Té Matcha Ceremony - Landing Page Premium
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una landing page de alto impacto diseñada para la venta de Té Matcha de grado ceremonial, optimizada para conversión y con una estética minimalista y profesional.
 
-Currently, two official plugins are available:
+## ✨ Características Principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎨 **Diseño Premium**: Paleta de colores unificada (#4A6741) y tipografía elegante.
+- 📱 **100% Responsivo**: Adaptado para móviles, tablets y escritorio.
+- 🍵 **Sección de Recetas**: Galería interactiva con modal (lightbox) para ver preparaciones.
+- 💬 **Integración con WhatsApp**: Botón flotante y botones de llamada a la acción (CTA) vinculados directamente para pedidos.
+- ⚡ **Performance**: Construido con React + Vite para una carga instantánea.
+- 🌊 **Transiciones Suaves**: Divisor de onda (SVG) y animaciones sutiles con Framer Motion.
 
-## React Compiler
+## 🚀 Guía de Despliegue (Production)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Esta aplicación es estática, lo que permite desplegarla gratis en minutos.
 
-## Expanding the ESLint configuration
+### Opción 1: Vercel (Recomendado)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Crea una cuenta en [Vercel](https://vercel.com/).
+2. Haz clic en **"Add New"** > **"Project"**.
+3. Importa tu repositorio `te_matcha` desde GitHub.
+4. En **Framework Preset**, selecciona **Vite**.
+5. Haz clic en **"Deploy"**.
+   - *Vercel detectará automáticamente `npm run build` y la carpeta `dist`.*
+
+### Opción 2: Netlify
+
+1. Ve a [Netlify](https://www.netlify.com/).
+2. Haz clic en **"Add new site"** > **"Import an existing project"**.
+3. Conecta tu GitHub y elige el repositorio.
+4. Asegúrate que el **Build command** sea `npm run build` y el **Publish directory** sea `dist`.
+5. Haz clic en **"Deploy site"**.
+
+### Opción 3: Despliegue Manual (Build)
+
+Si prefieres subir los archivos manualmente por FTP o a otro hosting:
+
+```bash
+# 1. Instalar dependencias
+npm install
+
+# 2. Generar carpeta de producción
+npm run build
+```
+
+Esto generará una carpeta **/dist** con archivos HTML, CSS y JS optimizados lista para ser subida a cualquier servidor web.
+
+## 🛠️ Configuración Local
+
+Si deseas trabajar en el proyecto localmente:
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/yeiconcr/te_matcha.git
+   ```
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+3. Inicia el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+
+## ✒️ Créditos
+
+Proyecto desarrollado por [yeiconcr](https://github.com/yeiconcr). Calidad Ceremonial Garantizada.
