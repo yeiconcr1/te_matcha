@@ -208,9 +208,11 @@ function App() {
               <div className="social-links-revamped">
                 <a href="https://instagram.com/match.te" target="_blank" rel="noopener noreferrer" className="social-icon-link instagram" aria-label="Instagram">
                   <FontAwesomeIcon icon={faInstagram} />
+                  <span>@match.te</span>
                 </a>
                 <a href="https://www.tiktok.com/@damesisas" target="_blank" rel="noopener noreferrer" className="social-icon-link tiktok" aria-label="TikTok">
                   <FontAwesomeIcon icon={faTiktok} />
+                  <span>@damesisas</span>
                 </a>
               </div>
             </div>

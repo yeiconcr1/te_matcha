@@ -795,19 +795,16 @@ body {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.85rem;
-  /* Fixed size for perfect circles */
-  width: 40px;
-  height: 40px;
+  /* Pill style with text */
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0;
-  /* padding replaced by flex centering */
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  width: auto;
+  height: auto;
 
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 50%;
-  /* standard circle */
+  border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   -webkit-tap-highlight-color: transparent;
@@ -815,14 +812,7 @@ body {
 }
 
 /* Hover effects only for devices with a mouse (prevents sticky hover on mobile) */
-@media (hover: hover) {
-  .social-icon-link:hover {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-    color: var(--color-primary-dark);
-    transform: translateY(-3px);
-  }
-}
+/* Hover effects REMOVED as requested */
 
 /* Colored brand variants - solid backgrounds */
 .social-icon-link.instagram {
@@ -831,12 +821,7 @@ body {
   border-color: #E1306C;
 }
 
-@media (hover: hover) {
-  .social-icon-link.instagram:hover {
-    background: #C62D5E;
-    border-color: #C62D5E;
-  }
-}
+
 
 .social-icon-link.tiktok {
   color: white;
@@ -844,14 +829,7 @@ body {
   border-color: #000000;
 }
 
-@media (hover: hover) {
-  .social-icon-link.tiktok:hover {
-    background: #25F4EE;
-    /* TikTok Teal Accent */
-    border-color: #25F4EE;
-    color: #000000;
-  }
-}
+
 
 .social-icon-link svg {
   font-size: 1.05rem;
