@@ -805,15 +805,17 @@ body {
   border-color: #C62D5E;
 }
 
-.social-icon-link.facebook {
+.social-icon-link.tiktok {
   color: white;
-  background: #1877F2;
-  border-color: #1877F2;
+  background: #000000;
+  border-color: #000000;
 }
 
-.social-icon-link.facebook:hover {
-  background: #1265D8;
-  border-color: #1265D8;
+.social-icon-link.tiktok:hover {
+  background: #25F4EE;
+  /* TikTok Teal Accent */
+  border-color: #25F4EE;
+  color: #000000;
 }
 
 .social-icon-link svg {

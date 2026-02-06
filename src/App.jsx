@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Zap, Leaf, Shield, Droplet, Flame, Brain } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp, faInstagram, faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import { faWhatsapp, faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import './App.css';
 
 // Logo Component using actual image
@@ -22,7 +22,7 @@ function App() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   // WhatsApp Configuration
-  const whatsappNumber = "+573172989227"; // Replace with actual number
+  const whatsappNumber = "+573162821124"; // Replace with actual number
   const whatsappMessage = encodeURIComponent("Hola, vengo de la web. Me gustaría comprar Té Matcha Ceremony.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
@@ -204,11 +204,11 @@ function App() {
           <div className="footer-left-section">
             <Logo variant="footer" />
             <div className="social-links-revamped">
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon-link instagram" aria-label="Instagram">
+              <a href="https://www.instagram.com/match.te/" target="_blank" rel="noopener noreferrer" className="social-icon-link instagram" aria-label="Instagram">
                 <FontAwesomeIcon icon={faInstagram} />
               </a>
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon-link facebook" aria-label="Facebook">
-                <FontAwesomeIcon icon={faFacebookF} />
+              <a href="https://www.tiktok.com/@damesisas" target="_blank" rel="noopener noreferrer" className="social-icon-link tiktok" aria-label="TikTok">
+                <FontAwesomeIcon icon={faTiktok} />
               </a>
             </div>
           </div>
