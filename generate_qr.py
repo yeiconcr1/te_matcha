@@ -22,9 +22,8 @@ img = qr.make_image(fill_color=brand_color, back_color="white").convert('RGBA')
 try:
     logo = Image.open(logo_path)
     
-    # Calculate logo size (Max ~30% of QR width to ensure scannability)
-    # The vertical logo was huge (60%), but in the center, we must limit it.
-    target_logo_width = int(img.size[0] * 0.30) 
+    # Calculate logo size (Increased to ~40% for better visibility)
+    target_logo_width = int(img.size[0] * 0.40) 
     
     ratio = target_logo_width / logo.size[0]
     target_logo_height = int(logo.size[1] * ratio)
