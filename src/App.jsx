@@ -47,6 +47,25 @@ function App() {
     };
   }, [selectedImage]);
 
+  // Custom navigation handler to clean URL
+  const handleSmoothScroll = (e, targetId) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      const offset = 80; // Match scroll-margin-top
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // Keep URL clean without hash
+      window.history.pushState(null, null, window.location.pathname);
+    }
+  };
+
   return (
     <div className="app">
       {/* Floating WhatsApp Button */}
@@ -65,7 +84,7 @@ function App() {
         <div className="container nav-content">
           <Logo />
           <ul className="nav-links">
-            <li><a href="#recetas">Recetas</a></li>
+            <li><a href="#recetas" onClick={(e) => handleSmoothScroll(e, 'recetas')}>Recetas</a></li>
             <li><a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-nav">Comprar</a></li>
           </ul>
         </div>
@@ -95,7 +114,7 @@ function App() {
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-primary">
                 Empieza Hoy
               </a>
-              <a href="#recetas" className="btn-secondary">
+              <a href="#recetas" className="btn-secondary" onClick={(e) => handleSmoothScroll(e, 'recetas')}>
                 Ver Recetas
               </a>
             </div>
@@ -198,7 +217,7 @@ function App() {
           <div className="footer-right-section">
             <h4 className="footer-title">Navegación</h4>
             <ul className="footer-nav-list">
-              <li><a href="#recetas">Recetas Sugeridas</a></li>
+              <li><a href="#recetas" onClick={(e) => handleSmoothScroll(e, 'recetas')}>Recetas Sugeridas</a></li>
               <li><a href={whatsappLink} target="_blank" rel="noopener noreferrer">Tienda Oficial (WhatsApp)</a></li>
             </ul>
           </div>
