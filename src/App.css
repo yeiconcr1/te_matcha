@@ -811,11 +811,14 @@ body {
   /* Remove black tap box on mobile */
 }
 
-.social-icon-link:hover {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: var(--color-primary-dark);
-  transform: translateY(-3px);
+/* Hover effects only for devices with a mouse (prevents sticky hover on mobile) */
+@media (hover: hover) {
+  .social-icon-link:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-primary-dark);
+    transform: translateY(-3px);
+  }
 }
 
 /* Colored brand variants - solid backgrounds */
@@ -825,9 +828,11 @@ body {
   border-color: #E1306C;
 }
 
-.social-icon-link.instagram:hover {
-  background: #C62D5E;
-  border-color: #C62D5E;
+@media (hover: hover) {
+  .social-icon-link.instagram:hover {
+    background: #C62D5E;
+    border-color: #C62D5E;
+  }
 }
 
 .social-icon-link.tiktok {
@@ -836,11 +841,13 @@ body {
   border-color: #000000;
 }
 
-.social-icon-link.tiktok:hover {
-  background: #25F4EE;
-  /* TikTok Teal Accent */
-  border-color: #25F4EE;
-  color: #000000;
+@media (hover: hover) {
+  .social-icon-link.tiktok:hover {
+    background: #25F4EE;
+    /* TikTok Teal Accent */
+    border-color: #25F4EE;
+    color: #000000;
+  }
 }
 
 .social-icon-link svg {
