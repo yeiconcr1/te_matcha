@@ -662,9 +662,8 @@ body {
 
 .modal-container {
   position: relative;
-  width: auto;
-  max-width: 90vw;
-  max-height: 90vh;
+  width: 70vw;
+  height: 95vh;
   background: white;
   border-radius: 16px;
   overflow: hidden;
@@ -672,6 +671,15 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .modal-container {
+    width: auto;
+    height: auto;
+    max-width: 95vw;
+    max-height: 85vh;
+  }
 }
 
 .modal-close {
