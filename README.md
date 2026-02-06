@@ -52,7 +52,7 @@ Si deseas trabajar en el proyecto localmente:
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/yeiconcr/te_matcha.git
+   git clone https://github.com/yeiconcr1/te_matcha.git
    ```
 2. Instala las dependencias:
    ```bash
@@ -65,4 +65,4 @@ Si deseas trabajar en el proyecto localmente:
 
 ## ✒️ Créditos
 
-Proyecto desarrollado por [yeiconcr](https://github.com/yeiconcr). Calidad Ceremonial Garantizada.
+Proyecto desarrollado por [yeiconcr1](https://github.com/yeiconcr1). Calidad Ceremonial Garantizada.
