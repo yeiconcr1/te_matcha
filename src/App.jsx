@@ -206,7 +206,7 @@ function App() {
             <div className="social-container">
               <span className="social-label">Síguenos en:</span>
               <div className="social-links-revamped">
-                <a href="https://www.instagram.com/match.te?igsh=Ynp0N2lpZW51bW56" target="_blank" rel="noopener noreferrer" className="social-icon-link instagram" aria-label="Instagram">
+                <a href="https://instagram.com/_u/match.te" target="_blank" rel="noopener noreferrer" className="social-icon-link instagram" aria-label="Instagram">
                   <FontAwesomeIcon icon={faInstagram} />
                 </a>
                 <a href="https://www.tiktok.com/@damesisas" target="_blank" rel="noopener noreferrer" className="social-icon-link tiktok" aria-label="TikTok">
