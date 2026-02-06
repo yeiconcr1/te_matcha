@@ -662,14 +662,16 @@ body {
 
 .modal-container {
   position: relative;
-  width: 70vw;
-  height: 95vh;
+  width: auto;
+  max-width: 90vw;
+  max-height: 90vh;
   background: white;
   border-radius: 16px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 .modal-close {
